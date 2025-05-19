@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holiday Cyber Protection Shield</title>
+    <link rel="stylesheet" href="./css/popup.css">
+</head>
+
+<body>
+    <div id="container">
+        <h1 class="text-center">Security Scanner</h1>
+        <h2 class="text-center">*Enter URL and click to start scan*</h2>
+
+        <!-- URL Input Section -->
+        <div id="urlSection">
+            <input type="text" id="urlInput" placeholder="Paste URL here..." />
+            <label for="seasonInput">Which season are you shopping for?</label>
+            <input type="text" id="seasonInput" placeholder="e.g., Black Friday, Christmas" />
+            <button id="scanButton">Scan URL</button>
+        </div>
+
+        <div id="loadingSpinner" style="display: none;">🔄 Scanning...</div>
+        <div id="emptyState">Ready to scan.</div>
+        <div id="riskScore"></div>
+
+        <!-- Scanned URL Display -->
+        <div id="scannedUrlSection" style="display: none;">
+            <p><strong>Scanned URL:</strong> <span id="scannedUrlText"></span></p>
+        </div>
+
+        <!-- Rescan Button -->
+        <button id="rescanButton" style="display: none;">Rescan</button>
+
+        <!-- Registration Form -->
+        <div id="registrationForm" style="display: none;">
+            <h3>Register for more details</h3>
+            <form id="registerForm">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" required>
+
+                <label for="deviceType">Device Type:</label>
+                <select id="deviceType">
+                    <option value="Laptop">Laptop</option>
+                    <option value="Phone">Phone</option>
+                    <option value="Tablet">Tablet</option>
+                </select>
+
+                <!-- Consent Checkbox -->
+                <div class="consent-wrapper">
+                    <p class="confidentiality">By registering, you help improve our detection model. Your data is securely stored and only used to improve predictions during seasonal threats.</p>
+                    <input type="checkbox" id="consentCheckbox">
+                    <label for="consentCheckbox">I agree to register my personal data to help improve my awareness of phishing behaviour.</label>
+                </div>
+
+                <button type="submit">Register</button>
+            </form>
+        </div>
+
+        <!-- Scam Prevention Tips Link -->
+        <a id="tipsLink" href="https://stopthinkfraud.campaign.gov.uk/" target="_blank" style="display: none;">
+            Learn how to avoid phishing and fraud scams during the holiday seasons.
+        </a>
+
+        <!-- Scan History -->
+        <div id="scanHistory">
+            <h3>📜 Scan History</h3>
+            <ul id="historyList"></ul>
+        </div>
+
+        <!-- Feedback Section -->
+        <div id="feedbackSection" style="display: none;">
+            <h3>📣 Your Feedback</h3>
+            <form id="feedbackForm">
+                <label for="feedbackText">How was your scanning experience?</label>
+                <textarea id="feedbackText" rows="3" placeholder="Leave your thoughts here..." required></textarea>
+
+                <label for="feedbackRating">Rate the scan (1 = Poor, 5 = Excellent)</label>
+                <select id="feedbackRating" required>
+                    <option value="">Select</option>
+                    <option value="1">1 - Poor</option>
+                    <option value="2">2</option>
+                    <option value="3">3 - Average</option>
+                    <option value="4">4</option>
+                    <option value="5">5 - Excellent</option>
+                </select>
+
+                <button type="submit">Submit Feedback</button>
+            </form>
+            <div id="feedbackThanks" style="display: none; margin-top: 10px;">🙏 Thank you for your feedback!</div>
+        </div>
+
+     
+
+ <!-- Analytics Section -->
+        <div id="analyticsSection">
+            <h3>📈 Scan Analytics</h3>
+            <ul id="analyticsList"></ul>
+        </div>
+
+        <!-- Most Common Seasons Summary -->
+        <div id="seasonSummary">
+            <h3>📊 Most Common Seasons</h3>
+            <ul id="seasonStatsList"></ul>
+        </div>
+    </div>
+
+    <script src="./scripts/popupnew.js"></script>
+</body>
+
+</html>

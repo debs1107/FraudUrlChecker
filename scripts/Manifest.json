@@ -1,0 +1,23 @@
+{
+    "name": "Strengthening Cybersecurity During Holiday Seasons",
+    "version": "0.1",
+    "manifest_version": 3,
+    "description": "A predictive AI-driven Chrome extension to combat phishing and fraud during the holiday season.",
+    "permissions": ["storage","tabs","activeTab","webRequest", "notifications","scripting"],
+    "host_permissions": ["https://localhost:7093/"],
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["./scripts/contentscript.js"],
+        "css": ["./css/styles.css"]
+      }
+    ],
+    "background": {
+      "service_worker": "./scripts/background.js"
+    },
+    "action": {
+      "default_title": "Cyber Protection Shield",
+      "default_popup": "popup.html"
+    }
+  }
+  
